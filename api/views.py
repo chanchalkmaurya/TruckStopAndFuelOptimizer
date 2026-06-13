@@ -57,7 +57,6 @@ class RouteView(APIView):
             )
         
         route_points = build_route_points(geometry)
-        print(f"--------------------- route_points ------------------------------------\n{route_points}")
         candidates = get_candidate_stations(route_points, geometry)
 
         try:
