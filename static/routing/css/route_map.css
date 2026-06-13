@@ -1,0 +1,70 @@
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    font-family: sans-serif;
+    padding: 0 16px;
+}
+#route-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+#route-form input {
+    flex: 1;
+    padding: 8px;
+}
+#route-form button {
+    padding: 8px 16px;
+    cursor: pointer;
+}
+#route-form button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+#map {
+    height: 500px;
+    margin: 15px 0;
+    border: 1px solid #ccc;
+}
+#error-box {
+    background: #fdecea;
+    color: #b3261e;
+    border: 1px solid #f5c2c0;
+    padding: 10px 14px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+#summary-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 15px;
+}
+.card {
+    background: #f5f5f5;
+    border-radius: 8px;
+    padding: 12px 16px;
+}
+.card-label {
+    font-size: 13px;
+    color: #666;
+    margin: 0 0 4px;
+}
+.card-value {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0;
+}
+#fuel-stops table {
+    width: 100%;
+    border-collapse: collapse;
+}
+#fuel-stops th, #fuel-stops td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    font-size: 14px;
+}
+#fuel-stops th {
+    background: #f5f5f5;
+}

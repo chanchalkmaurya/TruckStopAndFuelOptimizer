@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Fuel Route Planner</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="{% static 'routing/css/route_map.css' %}">
+    {% csrf_token %}
+</head>
+<body>
+    <div class="container">
+        <h1>Fuel Route Planner</h1>
+
+        <form id="route-form">
+            <input type="text" id="start" placeholder="Start (e.g. Chicago, IL)" required>
+            <input type="text" id="end" placeholder="End (e.g. Dallas, TX)" required>
+            <button type="submit" id="submit-btn">Get Route</button>
+        </form>
+
+        <div id="error-box" style="display:none;"></div>
+
+        <div id="summary-cards" style="display:none;">
+            <div class="card">
+                <p class="card-label">Total distance</p>
+                <p class="card-value" id="dist-val">--</p>
+            </div>
+            <div class="card">
+                <p class="card-label">Total fuel cost</p>
+                <p class="card-value" id="cost-val">--</p>
+            </div>
+            <div class="card">
+                <p class="card-label">Fuel stops</p>
+                <p class="card-value" id="stops-val">--</p>
+            </div>
+        </div>
+
+        <div id="map"></div>
+
+        <div id="fuel-stops"></div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="{% static 'routing/js/route_map.js' %}"></script>
+</body>
+</html>
