@@ -51,7 +51,6 @@ class OpenRouteServices:
             Cached by rounded coordinate pairs (3 decimals ~110m precision)
             so near-identical requests reuse the same route.
         """
-        print("get route called")
         key = _cache_key(
             "route",
             round(start[1], 3), round(start[1], 3),
@@ -77,15 +76,12 @@ class OpenRouteServices:
             headers=headers,
             timeout=15,
         )
-        print(response.status_code)
         data = response.json()
-        # print(data)
         feature = data["features"][0]
         geometry = feature["geometry"]["coordinates"] # list of [longitude, latitude]
         distance_meters = feature["properties"]["summary"]["distance"]
         distance_miles = distance_meters * 0.000621371
         result = (geometry, distance_miles)
-        print(f"get route returned {result}")
         cache.set(key, result, timeout=ROUTE_CACHE_TTL)
         return result
         

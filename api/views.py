@@ -38,7 +38,6 @@ class RouteView(APIView):
         try:
             start = OpenRouteServices.geocode(req.validated_data["start"])
             end = OpenRouteServices.geocode(req.validated_data["end"])
-            print(start, end)
         except ValueError as e:
             return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
         
