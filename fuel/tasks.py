@@ -9,6 +9,6 @@ def geocode_station(station_id):
         id=station_id
     )
 
-    GeoCodingService.geocode_station(
+    GeoCodingService.geocode_stations(
         station
     )
